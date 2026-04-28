@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #0a0a0a;
+    color: #e5e5e5;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #111; }
+  ::-webkit-scrollbar-thumb { background: #1a6b2f; border-radius: 3px; }
+}
+
+@layer components {
+  /* Stripe divider */
+  .stripe-divider {
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      #1a6b2f 0px, #1a6b2f 20px,
+      #0f3d1a 20px, #0f3d1a 40px
+    );
+  }
+
+  /* Green section line */
+  .section-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #1a6b2f, #2ea04a);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Gear bg */
+  .gear-bg {
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(26,107,47,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(26,107,47,0.05) 0%, transparent 40%);
+  }
+
+  /* Noise overlay */
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-block bg-brand-green text-white font-condensed font-semibold tracking-widest uppercase px-8 py-3 transition-all duration-200 border-0 cursor-pointer;
+  }
+  .btn-primary:hover {
+    @apply bg-brand-light;
+    transform: translateY(-1px);
+  }
+  .btn-primary:disabled {
+    @apply opacity-40 cursor-not-allowed;
+    transform: none;
+  }
+
+  .btn-outline {
+    @apply inline-block border border-brand-green text-brand-accent font-condensed font-semibold tracking-widest uppercase px-8 py-3 bg-transparent transition-all duration-200 cursor-pointer;
+  }
+  .btn-outline:hover {
+    @apply bg-brand-green text-white;
+  }
+
+  /* Nav link underline animation */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1a6b2f;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Service card */
+  .service-card {
+    border: 1px solid #242424;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    border-color: #1a6b2f;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,107,47,0.18);
+  }
+
+  /* Machine card */
+  .machine-card {
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+  .machine-card:hover {
+    border-color: #1a6b2f;
+    box-shadow: 0 8px 30px rgba(26,107,47,0.2);
+  }
+  .machine-card:hover .machine-overlay {
+    opacity: 1;
+  }
+  .machine-overlay {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* Stat box */
+  .stat-box {
+    border-left: 3px solid #1a6b2f;
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  }
+
+  /* Form inputs */
+  .form-input {
+    background: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    color: #e5e5e5;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 2px;
+  }
+  .form-input:focus {
+    border-color: #1a6b2f;
+    box-shadow: 0 0 0 3px rgba(26,107,47,0.15);
+  }
+  .form-input::placeholder {
+    color: #555;
+  }
+}
+
+@layer utilities {
+  /* Gear spin */
+  .gear-spin {
+    animation: spin 18s linear infinite;
+  }
+  .gear-spin-reverse {
+    animation: spin 12s linear infinite reverse;
+  }
+
+  /* Page enter */
+  .page-enter {
+    animation: fadeSlideIn 0.45s ease forwards;
+  }
+
+  /* Hero diagonal clip */
+  .hero-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+}
+
+/* Keyframes */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
