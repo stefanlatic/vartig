@@ -11,13 +11,13 @@
         </div>
         <p class="text-gray-500 text-sm leading-relaxed font-body">
           Kvalitet, Sigurnost, Konkurentnost.<br />
-          Precision metal manufacturing tailored to your requirements.
+          Precizna izrada metalnih delova prilagođena vašim zahtevima.
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Quick Links</h4>
+        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Linkovi</h4>
         <ul class="space-y-2">
           <li v-for="link in navLinks" :key="link.to">
             <RouterLink
@@ -32,7 +32,7 @@
 
       <!-- Contact -->
       <div>
-        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Contact</h4>
+        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Kontakt</h4>
         <ul class="space-y-3 text-gray-500 text-sm font-body">
           <li class="flex items-start gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-brand-green flex-shrink-0 mt-0.5">
@@ -57,7 +57,7 @@
     </div>
 
     <div class="border-t border-surface-600 py-4 text-center text-gray-600 text-xs font-body">
-      © {{ currentYear }} Vartig d.o.o. — All rights reserved.
+      © {{ currentYear }} Vartig d.o.o. — Sva prava su zadrzana.
     </div>
   </footer>
 </template>
@@ -68,10 +68,10 @@ import GearIcon from '@/components/GearIcon.vue'
 const currentYear = new Date().getFullYear()
 
 const navLinks = [
-  { to: '/',               label: 'Home' },
-  { to: '/services',      label: 'Our Services' },
-  { to: '/machines-park', label: 'Machines Park' },
-  { to: '/about',         label: 'About' },
-  { to: '/contact',       label: 'Contact' },
+  { to: '/',               label: 'Početna' },
+  { to: '/services',      label: 'Naše Usluge' },
+  { to: '/machines-park', label: 'Mašinski Park' },
+  { to: '/about',         label: 'O Nama' },
+  { to: '/contact',       label: 'Kontakt' },
 ]
 </script>

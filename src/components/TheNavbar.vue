@@ -73,11 +73,11 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const navLinks = [
-  { to: '/',              label: 'Home' },
-  { to: '/services',     label: 'Our Services' },
-  { to: '/machines-park', label: 'Machines Park' },
-  { to: '/about',        label: 'About' },
-  { to: '/contact',      label: 'Contact' },
+  { to: '/',              label: 'Početna' },
+  { to: '/services',     label: 'Naše Usluge' },
+  { to: '/machines-park', label: 'Mašinski Park' },
+  { to: '/about',        label: 'O Nama' },
+  { to: '/contact',      label: 'Kontakt' },
 ]
 
 function onScroll() {

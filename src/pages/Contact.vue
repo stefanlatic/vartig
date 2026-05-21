@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Get In Touch"
-      title="CONTACT US"
-      subtitle="Send us your technical requirements or request a quote. We'll get back to you promptly."
+      eyebrow="Stupite u kontakt"
+      title="KONTAKT"
+      subtitle="Pošaljite nam tehničke zahteve ili zatražite ponudu. Odgovorićemo vam brzo."
     />
     <div class="stripe-divider"></div>
 
@@ -13,7 +13,7 @@
         <!-- ─── FORM ─────────────────────────────────────────── -->
         <div>
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-8">SEND US A MESSAGE</h2>
+          <h2 class="font-display text-4xl text-white mb-8">POŠALJITE NAM PORUKU</h2>
 
           <!-- Success state -->
           <div
@@ -21,11 +21,11 @@
             class="bg-brand-dark border border-brand-green p-8 rounded-sm text-center"
           >
             <div class="text-4xl mb-3">✅</div>
-            <h3 class="font-condensed text-xl tracking-wide text-white uppercase mb-2">Message Sent!</h3>
+            <h3 class="font-condensed text-xl tracking-wide text-white uppercase mb-2">Poruka poslata!</h3>
             <p class="font-body text-gray-400 text-sm">
-              Thank you for reaching out. We'll get back to you as soon as possible.
+              Hvala što ste nas kontaktirali. Javićemo vam se što pre.
             </p>
-            <button @click="sent = false" class="btn-outline mt-6 text-sm">Send Another Message</button>
+            <button @click="sent = false" class="btn-outline mt-6 text-sm">Pošaljite još jednu poruku</button>
           </div>
 
           <!-- Form -->
@@ -33,45 +33,45 @@
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                  Full Name *
+                  Ime i prezime *
                 </label>
                 <input
                   v-model="form.name"
                   type="text"
                   class="form-input"
-                  placeholder="Your name"
+                  placeholder="Vaše ime"
                   required
                 />
               </div>
               <div>
                 <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                  Company
+                  Kompanija
                 </label>
                 <input
                   v-model="form.company"
                   type="text"
                   class="form-input"
-                  placeholder="Company name"
+                  placeholder="Naziv kompanije"
                 />
               </div>
             </div>
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                Email Address *
+                E-mail adresa *
               </label>
               <input
                 v-model="form.email"
                 type="email"
                 class="form-input"
-                placeholder="your@email.com"
+                placeholder="vaš@email.com"
                 required
               />
             </div>
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                Phone Number
+               Broj telefona
               </label>
               <input
                 v-model="form.phone"
@@ -83,13 +83,13 @@
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                Your Message / Requirements *
+                Vaša poruka / Zahtev *
               </label>
               <textarea
                 v-model="form.message"
                 rows="5"
                 class="form-input resize-none"
-                placeholder="Describe your project, required parts, quantities, tolerances..."
+                placeholder="Opišite projekat, tražene delove, količine, tolerancije..."
                 required
               ></textarea>
             </div>
@@ -99,11 +99,11 @@
               :disabled="sending"
               class="btn-primary w-full text-center"
             >
-              {{ sending ? 'Sending...' : 'Send Message' }}
+              {{ sending ? 'Slanje...' : 'Poruka je poslata!' }}
             </button>
 
             <p class="font-body text-gray-600 text-xs">
-              You can also attach technical drawings via email to
+              Tehničke crteže možete priložiti i putem e-maila na
               <a href="mailto:info@vartig.rs" class="text-brand-accent hover:underline">info@vartig.rs</a>
             </p>
           </form>
@@ -112,7 +112,7 @@
         <!-- ─── INFO ─────────────────────────────────────────── -->
         <div>
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-8">CONTACT INFO</h2>
+          <h2 class="font-display text-4xl text-white mb-8">KONTAKT INFORMACIJE</h2>
 
           <div class="space-y-6 mb-10">
             <div v-for="info in contactInfo" :key="info.label" class="flex items-start gap-4">
@@ -126,7 +126,7 @@
 
           <!-- Working hours -->
           <div class="bg-surface-700 border border-surface-500 p-6 rounded-sm mb-6">
-            <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Working Hours</h4>
+            <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Radno Vreme</h4>
             <div class="space-y-2">
               <div
                 v-for="wh in workingHours"
@@ -175,14 +175,14 @@ function submit() {
 
 const contactInfo = [
   {
-    label: 'Address',
+    label: 'Adresa',
     value: 'Industrijska zona bb, Srbija',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
     </svg>`,
   },
   {
-    label: 'Phone',
+    label: 'Telefon',
     value: '+381 xx xxx xxxx',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -198,8 +198,8 @@ const contactInfo = [
 ]
 
 const workingHours = [
-  { day: 'Monday – Friday', hours: '07:00 – 15:00' },
-  { day: 'Saturday',        hours: '07:00 – 13:00' },
-  { day: 'Sunday',          hours: 'Closed' },
+  { day: 'Ponedeljak – Petak', hours: '07:00 – 15:00' },
+  { day: 'Subota',        hours: '07:00 – 13:00' },
+  { day: 'Nedelja',          hours: 'Ne radimo' },
 ]
 </script>

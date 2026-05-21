@@ -45,7 +45,7 @@
         <div class="text-center mb-14">
           <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">How It Works</p>
           <div class="section-line mx-auto"></div>
-          <h2 class="font-display text-5xl text-white">OUR PROCESS</h2>
+          <h2 class="font-display text-5xl text-white">Naš  Proces</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
@@ -71,9 +71,9 @@
 
     <!-- ─── CTA ───────────────────────────────────────────────── -->
     <section class="py-14 bg-brand-dark text-center">
-      <h2 class="font-display text-4xl text-white mb-4">NEED A QUOTE?</h2>
-      <p class="font-body text-gray-400 mb-8">Send us your drawings or describe your requirements and we'll get back to you quickly.</p>
-      <RouterLink to="/contact" class="btn-primary">Request a Quote</RouterLink>
+      <h2 class="font-display text-4xl text-white mb-4">TREBATE PONUDU?</h2>
+      <p class="font-body text-gray-400 mb-8">Pošaljite nam crteže ili opišite zahteve i javićemo vam se brzo.</p>
+      <RouterLink to="/contact" class="btn-primary">Zatražite ponudu</RouterLink>
     </section>
   </div>
 </template>
@@ -84,9 +84,9 @@ import PageHeader from '@/components/PageHeader.vue'
 import { services } from '@/data/services.js'
 
 const process = [
-  { title: 'Inquiry',    desc: 'Send us your drawings, samples or requirements.' },
-  { title: 'Quote',      desc: 'We evaluate and prepare a precise offer.' },
-  { title: 'Production', desc: 'Manufacturing with full quality control.' },
-  { title: 'Delivery',   desc: 'Inspected, packaged and delivered on time.' },
+  { title: 'Upit',    desc: 'Pošaljite nam crteže, uzorke ili zahteve.' },
+  { title: 'Ponuda',      desc: 'Procenjujemo i pripremamo preciznu ponudu.' },
+  { title: 'Proizvodnja', desc: 'Izrada uz potpunu kontrolu kvaliteta.' },
+  { title: 'Isporuka',   desc: 'Pregledano, upakovano i isporučeno na vreme.' },
 ]
 </script>

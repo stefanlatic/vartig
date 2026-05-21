@@ -13,25 +13,31 @@
         <div>
           <div class="section-line"></div>
           <h2 class="font-display text-4xl md:text-5xl text-white mb-6">
-            BUILT ON PRECISION<br />AND EXPERIENCE
+            IZGRAĐEN NA PRECIZNOSTI<br />I ISKUSTVU
           </h2>
           <p class="font-body text-gray-400 leading-relaxed mb-4">
-            Vartig was founded with a clear mission: to provide the market with reliable,
-            high-precision metal components that meet the most demanding technical requirements.
-            Over the years, we have grown from a small machining shop into a full-service
-            manufacturing partner for clients across multiple industries.
+            Vartig je osnovan sa jasnom misijom: da tržištu obezbedi pouzdane, visokoprecizne metalne komponente koje zadovoljavaju i najzahtevnije tehničke zahteve. Tokom godina, izrasli smo iz male mašinske radionice u punopravnog proizvodnog partnera za klijente iz različitih industrija.
           </p>
           <p class="font-body text-gray-400 leading-relaxed mb-4">
-            Our team of experienced machinists, engineers and quality control specialists
-            ensures that every part leaving our workshop meets the agreed specifications — every time.
+           Naš tim iskusnih stručnjaka za obradu metala, inženjera i kontrolora kvaliteta osigurava da svaki deo koji napusti našu radionicu zadovoljava dogovorene specifikacije — svaki put.
           </p>
           <p class="font-body text-gray-400 leading-relaxed">
-            We believe in long-term partnerships built on trust, transparency and the consistent
-            delivery of quality. That philosophy is captured in our motto:
+            Verujemo u dugoročna partnerstva izgrađena na poverenju, transparentnosti i doslednoj isporuci kvaliteta. Ta filozofija je sadržana u našem motu:
             <span class="text-brand-accent font-condensed tracking-wider">
               Kvalitet. Sigurnost. Konkurentnost.
             </span>
           </p>
+        </div>
+
+       <!-- Founder photo and quote -->
+        <div class="bg-surface-700 p-8 rounded-sm">
+          <div class="h-64 w-64 bg-surface-500 border border-surface-300 rounded-full mx-auto mb-6 overflow-hidden">
+            <span class="text-6xl opacity-30">👤</span>
+          </div>
+          <p class="font-body text-gray-400 italic text-center">
+            "U Vartigu smo posvećeni izvrsnosti u svemu što radimo. Naša posvećenost preciznosti i kvalitetu je temelj našeg uspeha."
+          </p>
+          <p class="font-condensed text-lg text-center text-white mt-4">— Nenad Popovic, Osnivač i generalni direktor</p>
         </div>
 
         <!-- Project photo gallery -->
@@ -82,7 +88,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
           <div class="section-line mx-auto"></div>
-          <h2 class="font-display text-5xl text-white">OUR VALUES</h2>
+          <h2 class="font-display text-5xl text-white">NAŠE VREDNOSTI</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,9 +107,9 @@
 
     <!-- ─── CTA ───────────────────────────────────────────────── -->
     <section class="py-16 bg-brand-dark text-center">
-      <h2 class="font-display text-4xl text-white mb-4">LET'S WORK TOGETHER</h2>
-      <p class="font-body text-gray-400 mb-8">Tell us about your project and we'll find the best solution.</p>
-      <RouterLink to="/contact" class="btn-primary">Get In Touch</RouterLink>
+      <h2 class="font-display text-4xl text-white mb-4">HAJDE DA SARAĐUJEMO</h2>
+      <p class="font-body text-gray-400 mb-8">Recite nam o svom projektu i pronaći ćemo najbolje rešenje.</p>
+      <RouterLink to="/contact" class="btn-primary">Kontaktirajte nas</RouterLink>
     </section>
   </div>
 </template>
@@ -122,18 +128,18 @@ const projectPhotos = [null, null, null]
 const values = [
   {
     icon: '🎯',
-    title: 'Quality',
-    desc: "Every part is inspected against drawing tolerances before leaving the workshop. We don't compromise on dimensional accuracy or surface finish.",
+    title: 'Kvalitet',
+    desc: "Svaki deo se proverava u odnosu na tolerancije crteža pre nego što napusti radionicu. Ne pravimo kompromise u pogledu dimenzionalne tačnosti ili završne obrade površine.",
   },
   {
     icon: '🛡️',
-    title: 'Safety',
-    desc: 'We follow strict workplace safety standards and ensure our products perform reliably and safely in their intended application.',
+    title: 'Sigurnost',
+    desc: 'Poštujemo stroge standarde bezbednosti na radu i osiguravamo da naši proizvodi pouzdano i bezbedno funkcionišu u svojoj predviđenoj primeni.',
   },
   {
     icon: '📈',
-    title: 'Competitiveness',
-    desc: 'By optimizing our processes and maintaining modern equipment, we offer competitive pricing without sacrificing quality or delivery time.',
+    title: 'Konkurentnost',
+    desc: 'Optimizacijom naših procesa i održavanjem moderne opreme, nudimo konkurentne cene bez žrtvovanja kvaliteta ili vremena isporuke.',
   },
 ]
 </script>

@@ -3,9 +3,9 @@
     <!-- ─── NOT FOUND ─────────────────────────────────────────── -->
     <div v-if="!service" class="min-h-screen flex flex-col items-center justify-center text-center px-6">
       <GearIcon :size="64" class="text-surface-600 mb-6" />
-      <h1 class="font-display text-5xl text-white mb-4">SERVICE NOT FOUND</h1>
-      <p class="font-body text-gray-500 mb-8">This service page doesn't exist.</p>
-      <RouterLink to="/services" class="btn-primary">Back to Services</RouterLink>
+      <h1 class="font-display text-5xl text-white mb-4">USLUGA NIJE PRONAĐENA</h1>
+      <p class="font-body text-gray-500 mb-8">Ova stranica usluge ne postoji.</p>
+      <RouterLink to="/services" class="btn-primary">Nazad na Usluge</RouterLink>
     </div>
 
     <template v-else>
@@ -29,9 +29,9 @@
         <div class="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
           <!-- Breadcrumb -->
           <nav class="flex items-center gap-2 mb-6 font-condensed text-xs tracking-widest uppercase">
-            <RouterLink to="/" class="text-gray-600 hover:text-brand-accent transition-colors">Home</RouterLink>
+            <RouterLink to="/" class="text-gray-600 hover:text-brand-accent transition-colors">Početna</RouterLink>
             <span class="text-gray-700">/</span>
-            <RouterLink to="/services" class="text-gray-600 hover:text-brand-accent transition-colors">Services</RouterLink>
+            <RouterLink to="/services" class="text-gray-600 hover:text-brand-accent transition-colors">Usluge</RouterLink>
             <span class="text-gray-700">/</span>
             <span class="text-brand-accent">{{ service.name }}</span>
           </nav>
@@ -55,7 +55,7 @@
           <!-- Intro text -->
           <div>
             <div class="section-line"></div>
-            <h2 class="font-display text-4xl text-white mb-6">OVERVIEW</h2>
+            <h2 class="font-display text-4xl text-white mb-6">PREGLED</h2>
             <p class="font-body text-gray-400 leading-relaxed whitespace-pre-line text-base">
               {{ service.intro }}
             </p>
@@ -76,7 +76,7 @@
           <!-- Specs table -->
           <div>
             <div class="section-line"></div>
-            <h2 class="font-display text-4xl text-white mb-6">TECHNICAL DATA</h2>
+            <h2 class="font-display text-4xl text-white mb-6">TEHNIČKI PODACI</h2>
             <div class="border border-surface-600 rounded-sm overflow-hidden">
               <div
                 v-for="(spec, i) in service.specs"
@@ -103,7 +103,7 @@
       <section class="py-20 bg-surface-800">
         <div class="max-w-7xl mx-auto px-6">
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-10">GALLERY</h2>
+          <h2 class="font-display text-4xl text-white mb-10">GALERIJA</h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div
@@ -184,7 +184,7 @@
               class="max-h-[75vh] mx-auto object-contain rounded"
             />
             <div v-else class="h-64 flex items-center justify-center">
-              <p class="font-condensed text-gray-600 tracking-widest uppercase text-sm">No image yet</p>
+              <p class="font-condensed text-gray-600 tracking-widest uppercase text-sm">Nema fotografije još uvek...</p>
             </div>
             <p class="font-body text-gray-400 text-sm mt-4">{{ service.gallery[lightboxIndex].caption }}</p>
           </div>
@@ -205,7 +205,7 @@
       <section class="py-20 bg-surface-900">
         <div class="max-w-7xl mx-auto px-6">
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-10">OTHER SERVICES</h2>
+          <h2 class="font-display text-4xl text-white mb-10">OSTALE USLUGE</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <RouterLink
               v-for="other in otherServices"
@@ -224,9 +224,9 @@
 
       <!-- ─── CTA ────────────────────────────────────────────────── -->
       <section class="py-16 bg-brand-dark text-center">
-        <h2 class="font-display text-4xl text-white mb-4">INTERESTED IN {{ service.name.toUpperCase() }}?</h2>
-        <p class="font-body text-gray-400 mb-8">Send us your drawings or describe your requirements and we'll prepare a quote.</p>
-        <RouterLink to="/contact" class="btn-primary">Request a Quote</RouterLink>
+        <h2 class="font-display text-4xl text-white mb-4">ZAINTERESOVAN ZA {{ service.name.toUpperCase() }}?</h2>
+        <p class="font-body text-gray-400 mb-8">Pošaljite nam crteže ili opišite zahteve i pripremićemo ponudu.</p>
+        <RouterLink to="/contact" class="btn-primary">Zatražite ponudu</RouterLink>
       </section>
     </template>
   </div>
@@ -265,7 +265,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 
 // Update page title when service changes
 watch(service, (s) => {
-  document.title = s ? `Vartig – ${s.name}` : 'Vartig – Services'
+  document.title = s ? `Vartig – ${s.name}` : 'Vartig – Usluge'
 }, { immediate: true })
 </script>
 

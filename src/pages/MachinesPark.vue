@@ -12,7 +12,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
           <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-1">
-             Our machines photos and descriptions 
+             Slike i opisi naših mašina
           </p>
         </div>
 
@@ -35,10 +35,10 @@
                 class="w-full h-full flex flex-col items-center justify-center"
               >
                 <GearIcon :size="48" class="text-surface-500 mb-2" />
-                <span class="font-condensed text-xs tracking-widest text-gray-600 uppercase">Photo Coming Soon</span>
+                <span class="font-condensed text-xs tracking-widest text-gray-600 uppercase">Uskoro stiže fotografija</span>
               </div>
               <div class="machine-overlay absolute inset-0 bg-brand-green/10 flex items-center justify-center">
-                <span class="font-condensed text-brand-accent text-xs tracking-widest uppercase">View Details</span>
+                <span class="font-condensed text-brand-accent text-xs tracking-widest uppercase">Pogledaj detalje</span>
               </div>
             </div>
 
@@ -66,7 +66,7 @@
     <section class="py-16 bg-surface-800">
       <div class="max-w-7xl mx-auto px-6">
         <div class="section-line"></div>
-        <h2 class="font-display text-4xl text-white mb-10">TECHNICAL CAPABILITIES</h2>
+        <h2 class="font-display text-4xl text-white mb-10">TEHNIČKE MOGUĆNOSTI</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div
             v-for="cap in capabilities"
@@ -103,82 +103,82 @@ import strugF from '@/assets/machines/strug-frenky.jpeg'
 const machines = [
   {
     name: 'Borverk-90',
-    type: 'Milling machine',
+    type: 'Horizontalna Glodalica',
     image: borverk90, 
-    specs: ['Table: 1200 x 1000mm', 'Spindle speed: 1000 rpm', '3-axis capability'],
+    specs: ['Sto: 1200 x 1000mm', 'Obrtaji: 1000 rpm', '3-osna mogućnost izrade', 'Preciznost ±0.02mm'],
   },
   {
     name: 'Borverk-110',
-    type: 'Milling machine',
+    type: 'Horizontalna Glodalica',
     image: borverk110,
-    specs: ['Table: 1200 x 1000mm', 'Spindle speed: 1000 rpm', '3-axis capability'],
+    specs: ['Sto: 1200 x 1000mm', 'Obrtaji: 1000 rpm', '3-osna mogućnost izrade', 'Preciznost ±0.02mm'],
   },
   {
     name: 'Deckel FP4AT CNC ',
-    type: 'CNC Milling machine',
+    type: 'CNC Glodalica',
     image: cncGlodalica,
-    specs: ['Table: 550 x 500mm', 'Spindle speed: 4000 rpm', '3-axis capability'],
+    specs: ['Sto: 550 x 500mm', 'Obrtaji: 4000 rpm', '3-osna mogućnost izrade', 'Preciznost ±0.02mm'],
   },
   {
-    name: 'Turning Machine Morando',
-    type: 'Turning machine',
+    name: 'Strug Morando',
+    type: 'Manuelni Strug',
     image: morandoStrug,
-    specs: ['Grinding length: 1500mm', 'Diameter: up to 400mm', 'Surface finish Ra 0.4'],
+    specs: ['Max. duzina komada: 10.000mm', 'Max. precnik komada: 2.500mm', 'Preciznost ±0.02mm'],
   },
   {
-    name: 'Potisje PA501M Lathe',
-    type: 'Turning machine',
+    name: 'Potisje PA501M Strug',
+    type: 'Manuelni Strug',
     image: potisjePA501M,
-    specs: ['Table: 800 x 400mm', 'Precision ±0.002mm', 'Magnetic chuck'],
+    specs: ['Max. duzina komada: 1.000mm', 'Max. precnik komada: 500mm', 'Preciznost ±0.02mm'],
   },
   {
-    name: 'Potisje PA501M Lathe',
-    type: 'Turning machine',
+    name: 'Potisje PA501M Strug',
+    type: 'Manuelni Strug',
     image: potisjePA501M2,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. duzina komada: 1.000mm', 'Max. precnik komada: 500mm', 'Preciznost ±0.02mm'],
   },
    {
-    name: 'Lorenz - Gear Cutting machine',
+    name: 'Lorenz - Mašina za ozubljivanje',
     type: 'Gears & Sprockets Cutting',
     image: lorenzOzubljenje,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. precnik zupcanika: 2.500mm', 'Max. visina zubcanika: 3.500mm'],
   },
    {
-    name: 'Manual Milling machine',
-    type: 'Milling machine',
+    name: 'Manualna Glodalica',
+    type: 'Manualna Glodalica',
     image: malaGlodalica,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Sto: 900 x 400mm', 'Obrtaji: 700 rpm', '3-osna mogućnost izrade', 'Preciznost ±0.05mm'],
   },
    {
-    name: 'Grinder Machine',
-    type: 'Turning & grinding machine',
+    name: 'Univerzalna cilindrična brusilica',
+    type: 'Cilindrična brusilica',
     image: brusilicaStrug,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. duzina komada: 5.000mm', 'Max. precnik komada: 500mm', 'Preciznost ±0.01mm'],
   },
   {
     name: 'Dubilica',
-    type: 'Canal digging',
+    type: 'Dubilica',
     image: dubilicaVeca,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. precnik komada sa kanalom: 1.500mm', 'Max. kanal dubine: 150mm'],
   },
   {
-    name: 'Potisje PA831P Lathe',
-    type: 'Turning machine',
+    name: 'Potisje PA831P Strug',
+    type: 'Manuelni Strug',
     image: potisjePA831P,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. duzina komada: 16.000mm', 'Max. precnik komada: 3.000mm', 'Preciznost ±0.05mm'],
   },
   {
-    name: 'Turning Machine',
-    type: 'Turning machine',
+    name: 'Manuelni Strug',
+    type: 'Manuelni Strug',
     image: strugF,
-    specs: ['Drilling capacity: up to 80mm', 'Radial arm: 1600mm', 'Tapping capability'],
+    specs: ['Max. duzina komada: 3.000mm', 'Max. precnik komada: 1.800mm', 'Preciznost ±0.1mm'],
   },
 ]
 
 const capabilities = [
-  { value: '±0.01', label: 'Turning tolerance (mm)' },
-  { value: '2m',    label: 'Max shaft length' },
-  { value: '800mm', label: 'Max gear diameter' },
-  { value: 'Ra 0.4', label: 'Surface finish' },
+  { value: '±0.02', label: 'Uobicajena tolerancija (mm)' },
+  { value: '16.000mm',    label: 'Maksimalna dužina vratila' },
+  { value: '2.500mm', label: 'Maksimalni prečnik zupčanika'},
+  { value: 'Ra 0.4', label: 'Površinska završna obrada' },
 ]
 </script>

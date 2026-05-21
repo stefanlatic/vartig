@@ -164,7 +164,7 @@ export const services = [
   },
 
   {
-    slug: 'metal-assemblies',
+    slug: 'assemblies',
     tag: 'Assembly',
     name: 'Metal Assemblies',
     shortDesc: 'Complex multi-part assemblies with full dimensional control.',
@@ -202,7 +202,7 @@ export const services = [
   },
 
   {
-    slug: 'steel-constructions',
+    slug: 'constructions',
     tag: 'Fabrication',
     name: 'Steel Constructions',
     shortDesc: 'Metal structures and frames fabricated to engineering drawings.',
@@ -240,7 +240,7 @@ export const services = [
   },
 
   {
-    slug: 'custom-cnc-machining',
+    slug: 'custom-machining',
     tag: 'CNC Machining',
     name: 'Custom CNC Machining',
     shortDesc: 'Any metal part machined to your technical documentation.',
