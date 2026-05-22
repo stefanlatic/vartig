@@ -13,311 +13,305 @@
 export const services = [
   {
     slug: 'gears-sprockets',
-    tag: 'Transmission',
-    name: 'Gears & Sprockets',
-    shortDesc: 'Precision-cut gears and sprockets for demanding transmission applications.',
-    heroImage: null, // e.g. import gearsHero from '@/assets/services/gears/hero.jpg'
+    tag: 'Transmisija',
+    name: 'Zupčanici i lančanici',
+    shortDesc: 'Precizno rezani zupčanici i lančanici za zahtevne primene u prenosu.',
+    heroImage: null,
 
-    intro: `Vartig manufactures a wide range of gears and sprockets for industrial transmission systems.
-    Every tooth profile is cut to DIN standards or custom specifications, with tight tolerances
-    and surface finishes that ensure quiet, reliable operation over long service life.
-    We work from customer drawings, samples, or reverse-engineered measurements.`,
+    intro: `Vartig proizvodi širok asortiman zupčanika i lančanika za industrijske prenosne sisteme.
+Svaki profil zubaca se seče prema DIN standardima ili prilagođenim specifikacijama, sa uskim tolerancijama i površinskom obradom koja obezbeđuje tih i pouzdan rad tokom dugog veka trajanja.
+Radimo na osnovu crteža kupaca, uzoraka ili merenja dobijenih reverznim inženjeringom.`,
 
     specs: [
-      { label: 'Gear types',       value: 'Spur, helical, bevel, worm, internal' },
-      { label: 'Module range',     value: '0.5 – 20' },
-      { label: 'Max diameter',     value: '800 mm' },
-      { label: 'Max face width',   value: '300 mm' },
-      { label: 'Quality grade',    value: 'DIN 3962 grade 5–8' },
-      { label: 'Materials',        value: 'C45, 42CrMo4, 16MnCr5, stainless, bronze' },
-      { label: 'Heat treatment',   value: 'Case hardening, induction, nitriding' },
-      { label: 'Surface finish',   value: 'Ra 0.8 – 1.6 µm (ground on request)' },
+      { label: 'Tipovi zupčanika', value: 'Spiralni, konusni, pužni, unutrašnji' },
+      { label: 'Raspon modula', value: '0.5 – 20' },
+      { label: 'Maksimalni prečnik', value: '2.500 mm' },
+      { label: 'Maksimalna širina čela', value: '1000 mm' },
+      { label: 'Kvalitet', value: 'DIN 3962 klasa 5–8' },
+      { label: 'Materijali', value: 'C45, 42CrMo4, 16MnCr5, nerđajući čelik, bronza' },
+      { label: 'Termička obrada', value: 'Cementacija, indukciono kaljenje, nitriranje' },
+      { label: 'Površinska završna obrada', value: 'Ra 0.8 – 1.6 µm (brušenje na zahtev)' },
     ],
 
     gallery: [
-      { image: null, caption: 'Large spur gear, module 12, Ø 650 mm' },
-      { image: null, caption: 'Helical gear pair for industrial reducer' },
-      { image: null, caption: 'Chain sprockets, various pitch sizes' },
-      { image: null, caption: 'Bevel gear set, 1:3 ratio' },
+      { image: null, caption: 'Veliki cilindrični zupčanik, modul 12, Ø 650 mm' },
+      { image: null, caption: 'Par kosih zupčanika za industrijski reduktor' },
+      { image: null, caption: 'Lančanici različitih koraka' },
+      { image: null, caption: 'Konusni zupčanički par, odnos 1:3' },
     ],
 
     highlights: [
-      'All profiles verified with gear measurement centre',
-      'Hobbing, shaping and grinding in-house',
-      'Matched pairs supplied as sets',
-      'Batch sizes from 1 to 500+ pieces',
+      'Svi profili verifikovani u centru za merenje zupčanika',
+      'Obrada zupčanika, oblikovanje i brušenje u našoj kompaniji',
+      'Upareni parovi se isporučuju kao setovi',
+      'Serije od 1 do 500+ komada',
     ],
   },
 
   {
     slug: 'shafts-axles',
-    tag: 'Power Transfer',
-    name: 'Shafts & Axles',
-    shortDesc: 'Custom shafts and coupling systems designed for your torque requirements.',
+    tag: 'Prenos snage',
+    name: 'Osovine i vratila',
+    shortDesc: 'Prilagođena vratila i sistemi spojnica projektovani prema zahtevima obrtnog momenta.',
     heroImage: null,
 
-    intro: `From simple stepped shafts to complex multi-feature spindles, Vartig produces shafts
-    and axles in a wide range of materials and dimensions. All features — keyways, splines,
-    threads, grooves, bearing seats — are machined in as few setups as possible to maintain
-    concentricity and dimensional accuracy throughout the entire length.`,
+    intro: `Od jednostavnih stepenastih vratila do složenih višestepenih vretena, Vartig proizvodi vratila i osovine u širokom spektru materijala i dimenzija. Sve karakteristike — žlebovi za klinove, ozubljenja, navoji, utori i ležišta ležajeva — obrađuju se u što manjem broju stezanja kako bi se održala koncentričnost i dimenzionalna tačnost po celoj dužini.`,
 
     specs: [
-      { label: 'Max turning length', value: '2000 mm' },
-      { label: 'Max diameter',       value: '500 mm' },
-      { label: 'Straightness',        value: '≤ 0.02 mm/m' },
-      { label: 'Roundness',           value: '≤ 0.005 mm' },
-      { label: 'Surface finish',      value: 'Ra 0.4 µm (ground)' },
-      { label: 'Tolerances',          value: 'h5 / h6 for bearing seats' },
-      { label: 'Materials',           value: 'C45, 42CrMo4, 34CrNiMo6, stainless' },
-      { label: 'Features',            value: 'Keyways, splines (DIN 5480), threads, flats' },
+      { label: 'Maksimalna dužina', value: '2000 mm' },
+      { label: 'Maksimalni prečnik', value: '500 mm' },
+      { label: 'Pravost', value: '≤ 0.02 mm/m' },
+      { label: 'Okruglost', value: '≤ 0.005 mm' },
+      { label: 'Površinska obrada', value: 'Ra 0.4 µm (brušeno)' },
+      { label: 'Tolerancije', value: 'h5 / h6 za ležišta ležajeva' },
+      { label: 'Materijali', value: 'C45, 42CrMo4, 34CrNiMo6, nerđajući čelik' },
+      { label: 'Karakteristike', value: 'Klinovi, ozubljenja (DIN 5480), navoji, ravne površine' },
     ],
 
     gallery: [
-      { image: null, caption: 'Transmission shaft, Ø 120 mm × 1800 mm' },
-      { image: null, caption: 'Splined shaft for gearbox input' },
-      { image: null, caption: 'Hollow shaft with flanged end' },
-      { image: null, caption: 'Short stub axle with keyway and thread' },
+      { image: null, caption: 'Pogonsko vratilo, Ø 120 mm × 1800 mm' },
+      { image: null, caption: 'Ožlebljeno vratilo za ulaz menjača' },
+      { image: null, caption: 'Šuplje vratilo sa prirubničkim krajem' },
+      { image: null, caption: 'Kratka osovina sa žlebom za klin i navojem' },
     ],
 
     highlights: [
-      'CNC turning and cylindrical grinding in-house',
-      'Full-length straightness checking after grinding',
-      'Keyway milling to DIN 6885',
-      'Dynamic balancing available on request',
+      'CNC struganje i cilindrično brušenje u sopstvenoj proizvodnji',
+      'Kontrola pravosti pune dužine nakon brušenja',
+      'Izrada žlebova za klinove prema DIN 6885',
+      'Dinamičko balansiranje dostupno na zahtev',
     ],
   },
 
   {
     slug: 'reducers',
-    tag: 'Drive Systems',
-    name: 'Reducers',
-    shortDesc: 'Speed reducers built to specification for industrial use.',
+    tag: 'Pogonski sistemi',
+    name: 'Reduktori',
+    shortDesc: 'Reduktori brzine izrađeni prema specifikacijama za industrijsku primenu.',
     heroImage: null,
 
-    intro: `Vartig designs and manufactures complete speed reducer assemblies for industrial
-    applications where standard catalogue units do not meet the torque, ratio, or envelope
-    requirements. We machine the housings, produce all internal gears and shafts, source
-    bearings and seals, assemble and test every unit before delivery.`,
+    intro: `Vartig projektuje i proizvodi kompletne sklopove reduktora brzine za industrijske primene gde standardne kataloške jedinice ne ispunjavaju zahteve obrtnog momenta, prenosnog odnosa ili montažnog prostora.
+Obrađujemo kućišta, proizvodimo sve unutrašnje zupčanike i vratila, nabavljamo ležajeve i zaptivke, sklapamo i testiramo svaku jedinicu pre isporuke.`,
 
     specs: [
-      { label: 'Reduction ratios',  value: 'Single stage: 1:2 – 1:8 / Multi-stage: up to 1:200' },
-      { label: 'Output torque',     value: 'Up to 50 000 Nm (custom)' },
-      { label: 'Input speed',       value: 'Up to 3000 rpm' },
-      { label: 'Housing material',  value: 'Cast iron GJL-250, steel fabrication' },
-      { label: 'Shaft configuration', value: 'Inline, right-angle, offset' },
-      { label: 'Stages',            value: '1, 2 or 3 stage' },
-      { label: 'Lubrication',       value: 'Oil bath or forced lubrication' },
-      { label: 'Testing',           value: 'No-load and load test before delivery' },
+      { label: 'Prenosni odnosi', value: 'Jednostepeni: 1:2 – 1:8 / Višestepeni: do 1:200' },
+      { label: 'Izlazni obrtni moment', value: 'Do 50 000 Nm (po zahtevu)' },
+      { label: 'Ulazna brzina', value: 'Do 3000 o/min' },
+      { label: 'Materijal kućišta', value: 'Liveno gvožđe GJL-250, čelične konstrukcije' },
+      { label: 'Konfiguracija vratila', value: 'Koaksijalna, ugaona, pomerena' },
+      { label: 'Stepeni', value: '1, 2 ili 3 stepena' },
+      { label: 'Podmazivanje', value: 'Uljna kupka ili prinudno podmazivanje' },
+      { label: 'Testiranje', value: 'Test bez opterećenja i pod opterećenjem pre isporuke' },
     ],
 
     gallery: [
-      { image: null, caption: 'Two-stage helical reducer, ratio 1:28' },
-      { image: null, caption: 'Right-angle worm gearbox' },
-      { image: null, caption: 'Reducer housing after machining' },
-      { image: null, caption: 'Assembled unit on test bench' },
+      { image: null, caption: 'Dvostepeni kosi reduktor, odnos 1:28' },
+      { image: null, caption: 'Ugaoni pužni reduktor' },
+      { image: null, caption: 'Kućište reduktora nakon obrade' },
+      { image: null, caption: 'Sklopljena jedinica na ispitnom stolu' },
     ],
 
     highlights: [
-      'Fully custom — ratio, shaft layout, mounting interface',
-      'Housing designed and machined in-house',
-      'All internal components manufactured by Vartig',
-      'Load testing with report included',
+      'Potpuno prilagođeno — odnos, raspored vratila i montažni priključci',
+      'Kućišta projektovana i obrađena u našoj radionici',
+      'Sve unutrašnje komponente proizvodi Vartig',
+      'Ispitivanje pod opterećenjem sa izveštajem uključeno',
     ],
   },
 
   {
     slug: 'couplings-flanges',
-    tag: 'Connection',
-    name: 'Couplings & Flanges',
-    shortDesc: 'Rigid and flexible couplings and flanged connections for torque transmission.',
+    tag: 'Povezivanje',
+    name: 'Spojnice i prirubnice',
+    shortDesc: 'Krute i elastične spojnice i prirubnički spojevi za prenos obrtnog momenta.',
     heroImage: null,
 
-    intro: `Vartig manufactures rigid and flexible shaft couplings, jaw couplings, disc couplings,
-    and custom flanged adapters for connecting rotating equipment. Whether you need an exact
-    replacement for a worn coupling or a completely custom flange to mate two different shaft
-    standards, we machine it to your drawing or sample.`,
+    intro: `Vartig proizvodi krute i elastične spojnice vratila, kandžaste spojnice, lamelne spojnice
+    i prilagođene prirubničke adaptere za povezivanje rotacione opreme. Bilo da vam je potrebna tačna
+    zamena za istrošenu spojnicu ili potpuno prilagođena prirubnica za povezivanje dva različita
+    standarda vratila, izrađujemo je prema vašem crtežu ili uzorku.`,
 
     specs: [
-      { label: 'Coupling types',   value: 'Rigid, jaw, disc, gear, flange' },
-      { label: 'Max bore diameter', value: '300 mm' },
-      { label: 'Max torque',        value: 'Up to 20 000 Nm' },
-      { label: 'Bore tolerances',   value: 'H7 standard, others on request' },
-      { label: 'Keyway standard',   value: 'DIN 6885 / customer spec' },
-      { label: 'Materials',         value: 'C45, 42CrMo4, GJL-250, stainless' },
-      { label: 'Balancing',         value: 'Static and dynamic balancing available' },
-      { label: 'Surface',           value: 'Turned, ground, or coated' },
+      { label: 'Tipovi spojnica', value: 'Krute, kandžaste, lamelne, zupčaste, prirubničke' },
+      { label: 'Maksimalni prečnik provrta', value: '300 mm' },
+      { label: 'Maksimalni obrtni moment', value: 'Do 20 000 Nm' },
+      { label: 'Tolerancije provrta', value: 'H7 standard, ostalo na zahtev' },
+      { label: 'Standard žleba za klin', value: 'DIN 6885 / specifikacija kupca' },
+      { label: 'Materijali', value: 'C45, 42CrMo4, GJL-250, nerđajući čelik' },
+      { label: 'Balansiranje', value: 'Statičko i dinamičko balansiranje dostupno' },
+      { label: 'Površina', value: 'Strugana, brušena ili zaštićena premazom' },
     ],
 
     gallery: [
-      { image: null, caption: 'Rigid flange coupling, Ø 180 mm' },
-      { image: null, caption: 'Jaw coupling halves, bored to H7' },
-      { image: null, caption: 'Custom adapter flange between two shaft standards' },
-      { image: null, caption: 'Disc coupling for high-speed application' },
+      { image: null, caption: 'Kruta prirubnička spojnica, Ø 180 mm' },
+      { image: null, caption: 'Polovine kandžaste spojnice, obrađene na H7' },
+      { image: null, caption: 'Prilagođena adapter prirubnica između dva standarda vratila' },
+      { image: null, caption: 'Lamelna spojnica za velike brzine obrtanja' },
     ],
 
     highlights: [
-      'Exact replacement parts from worn samples',
-      'Custom bore, keyway and set-screw configurations',
-      'Matching flanges supplied as pairs',
-      'Balancing certificate available',
+      'Precizne zamene izrađene prema istrošenim uzorcima',
+      'Prilagođeni provrti, žlebovi i konfiguracije zavrtnjeva',
+      'Uparene prirubnice isporučuju se u setu',
+      'Sertifikat o balansiranju dostupan',
     ],
   },
 
   {
     slug: 'assemblies',
-    tag: 'Assembly',
-    name: 'Metal Assemblies',
-    shortDesc: 'Complex multi-part assemblies with full dimensional control.',
+    tag: 'Montaža',
+    name: 'Metalni sklopovi',
+    shortDesc: 'Kompleksni višedelni sklopovi sa potpunom dimenzionalnom kontrolom.',
     heroImage: null,
 
-    intro: `Beyond individual components, Vartig offers complete assembly services — taking
-    a set of machined parts, bearings, seals and fasteners and delivering a ready-to-install
-    sub-assembly. Every assembly is dimensionally checked against the drawing before leaving
-    the workshop, eliminating fitting problems on the customer's site.`,
+    intro: `Pored pojedinačnih komponenti, Vartig nudi kompletne usluge montaže — od
+    mašinski obrađenih delova, ležajeva, zaptivki i pričvrsnih elemenata do gotovog
+    podsklopa spremnog za ugradnju. Svaki sklop se dimenzionalno proverava prema crtežu
+    pre napuštanja radionice, čime se eliminišu problemi pri montaži kod kupca.`,
 
     specs: [
-      { label: 'Max assembly weight', value: '~2000 kg (overhead crane available)' },
-      { label: 'Inspection',          value: 'CMM and gauge measurement' },
-      { label: 'Fasteners',           value: 'DIN class 8.8 / 10.9 standard' },
-      { label: 'Bearings',            value: 'SKF, FAG, or customer-specified' },
-      { label: 'Seals',               value: 'Sourced and fitted to drawing' },
-      { label: 'Documentation',       value: 'Dimensional report on request' },
-      { label: 'Packaging',           value: 'Wooden crate, anti-corrosion wrapped' },
-      { label: 'Delivery',            value: 'To customer address or EXW' },
+      { label: 'Maksimalna težina sklopa', value: '~2000 kg (mostna dizalica dostupna)' },
+      { label: 'Kontrola', value: 'CMM i merenje mernim alatima' },
+      { label: 'Pričvrsni elementi', value: 'DIN klasa 8.8 / 10.9 standard' },
+      { label: 'Ležajevi', value: 'SKF, FAG ili po zahtevu kupca' },
+      { label: 'Zaptivke', value: 'Nabavljene i ugrađene prema crtežu' },
+      { label: 'Dokumentacija', value: 'Dimenzionalni izveštaj na zahtev' },
+      { label: 'Pakovanje', value: 'Drveni sanduk, antikorozivna zaštita' },
+      { label: 'Isporuka', value: 'Na adresu kupca ili EXW' },
     ],
 
     gallery: [
-      { image: null, caption: 'Gearbox sub-assembly ready for installation' },
-      { image: null, caption: 'Shaft + bearing + housing assembly' },
-      { image: null, caption: 'Dimensional check on CMM table' },
-      { image: null, caption: 'Finished assembly packed for transport' },
+      { image: null, caption: 'Podsklop reduktora spreman za montažu' },
+      { image: null, caption: 'Sklop vratila, ležaja i kućišta' },
+      { image: null, caption: 'Dimenzionalna kontrola na CMM stolu' },
+      { image: null, caption: 'Gotov sklop pripremljen za transport' },
     ],
 
     highlights: [
-      'Single-source for parts and assembly',
-      'Reduces your incoming inspection effort',
-      'Overhead crane for heavy sub-assemblies',
-      'Corrosion protection and professional packaging',
+      'Jedan dobavljač za delove i montažu',
+      'Smanjuje potrebu za ulaznom kontrolom',
+      'Mostna dizalica za teške podsklopove',
+      'Antikorozivna zaštita i profesionalno pakovanje',
     ],
   },
 
   {
     slug: 'constructions',
-    tag: 'Fabrication',
-    name: 'Steel Constructions',
-    shortDesc: 'Metal structures and frames fabricated to engineering drawings.',
+    tag: 'Čelične konstrukcije',
+    name: 'Čelične konstrukcije',
+    shortDesc: 'Metalne konstrukcije i ramovi izrađeni prema tehničkoj dokumentaciji.',
     heroImage: null,
 
-    intro: `Vartig fabricates welded and bolted steel structures, frames, supports, brackets and
-    machine bases from structural steel profiles and plates. All constructions are produced
-    from certified drawings and undergo dimensional and weld-quality inspection before
-    surface treatment and delivery.`,
+    intro: `Vartig izrađuje zavarene i vijčane čelične konstrukcije, ramove, nosače,
+    konzole i mašinske baze od konstrukcionih čeličnih profila i limova. Sve konstrukcije
+    proizvode se prema sertifikovanim crtežima i prolaze dimenzionalnu i kontrolu kvaliteta zavara
+    pre površinske zaštite i isporuke.`,
 
     specs: [
-      { label: 'Welding processes', value: 'MIG/MAG, TIG, MMA' },
-      { label: 'Weld quality',      value: 'EN ISO 5817 class B/C' },
-      { label: 'Max structure size', value: 'Up to 6000 × 2500 × 2000 mm' },
-      { label: 'Max lifting weight', value: '5000 kg' },
-      { label: 'Materials',         value: 'S235, S355, S690, stainless' },
-      { label: 'Machined interfaces', value: 'Milled mounting faces, bored holes' },
-      { label: 'Surface treatment', value: 'Blast + primer + topcoat, hot-dip galvanising' },
-      { label: 'NDT',               value: 'Visual, MT, UT on request' },
+      { label: 'Postupci zavarivanja', value: 'MIG/MAG, TIG, MMA' },
+      { label: 'Kvalitet zavara', value: 'EN ISO 5817 klasa B/C' },
+      { label: 'Maksimalna veličina konstrukcije', value: 'Do 6000 × 2500 × 2000 mm' },
+      { label: 'Maksimalna težina dizanja', value: '5000 kg' },
+      { label: 'Materijali', value: 'S235, S355, S690, nerđajući čelik' },
+      { label: 'Obrađene površine', value: 'Glodane montažne površine, bušeni otvori' },
+      { label: 'Površinska zaštita', value: 'Peskiranje + prajmer + završni premaz, toplo cinkovanje' },
+      { label: 'NDT', value: 'Vizuelna kontrola, MT, UT na zahtev' },
     ],
 
     gallery: [
-      { image: null, caption: 'Machine base frame, S355 steel' },
-      { image: null, caption: 'Welded support bracket after blasting' },
-      { image: null, caption: 'Structural frame with milled mounting pads' },
-      { image: null, caption: 'Finished construction after painting' },
+      { image: null, caption: 'Mašinska baza od S355 čelika' },
+      { image: null, caption: 'Zavareni nosač nakon peskiranja' },
+      { image: null, caption: 'Konstrukcioni ram sa glodanim montažnim površinama' },
+      { image: null, caption: 'Gotova konstrukcija nakon farbanja' },
     ],
 
     highlights: [
-      'In-house welding and machining in one location',
-      'Milled interfaces for accurate machine assembly',
-      'Full surface treatment capability',
-      'Weld inspection reports available',
+      'Zavarivanje i obrada na jednoj lokaciji',
+      'Glodane površine za preciznu montažu mašina',
+      'Kompletna površinska zaštita',
+      'Izveštaji o kontroli zavara dostupni',
     ],
   },
 
   {
     slug: 'custom-machining',
-    tag: 'CNC Machining',
-    name: 'Custom CNC Machining',
-    shortDesc: 'Any metal part machined to your technical documentation.',
+    tag: 'CNC obrada',
+    name: 'Prilagođena CNC obrada',
+    shortDesc: 'Bilo koji metalni deo obrađen prema vašoj tehničkoj dokumentaciji.',
     heroImage: null,
 
-    intro: `If you have a drawing, a 3D model, or even a worn part that needs replacing,
-    Vartig can machine it. Our CNC turning and milling centres handle a wide range of
-    materials and geometries — from simple turned bushings to complex prismatic parts
-    with multiple setups. We accept one-off prototypes as well as repeat production runs.`,
+    intro: `Ako imate crtež, 3D model ili čak istrošeni deo koji treba zameniti,
+    Vartig ga može izraditi. Naši CNC strugovi i glodalice obrađuju širok spektar
+    materijala i geometrija — od jednostavnih čaura do složenih prizmatičnih delova
+    sa više stezanja. Prihvatamo pojedinačne prototipove kao i serijsku proizvodnju.`,
 
     specs: [
-      { label: 'CNC turning',    value: 'Ø up to 500 mm × 2000 mm length' },
-      { label: 'CNC milling',    value: 'Table 1200 × 600 mm, 5-axis' },
-      { label: 'Tolerances',     value: 'IT6 standard; tighter on request' },
-      { label: 'Surface finish', value: 'Ra 0.4 µm achievable' },
-      { label: 'Materials',      value: 'All steels, cast iron, aluminium, bronze, brass' },
-      { label: 'Input formats',  value: 'DWG, DXF, STEP, IGES, PDF drawing, sample' },
-      { label: 'Batch size',     value: '1 piece to series production' },
-      { label: 'Lead time',      value: 'Prototype: from 3 days; series: on agreement' },
+      { label: 'CNC struganje', value: 'Ø do 500 mm × 2000 mm dužine' },
+      { label: 'CNC glodanje', value: 'Sto 1200 × 600 mm, 5 osa' },
+      { label: 'Tolerancije', value: 'IT6 standard; preciznije na zahtev' },
+      { label: 'Površinska obrada', value: 'Ra 0.4 µm moguće postići' },
+      { label: 'Materijali', value: 'Svi čelici, liveno gvožđe, aluminijum, bronza, mesing' },
+      { label: 'Ulazni formati', value: 'DWG, DXF, STEP, IGES, PDF crtež, uzorak' },
+      { label: 'Veličina serije', value: 'Od 1 komada do serijske proizvodnje' },
+      { label: 'Rok izrade', value: 'Prototip: od 3 dana; serije: po dogovoru' },
     ],
 
     gallery: [
-      { image: null, caption: 'Complex turned part with multiple diameters' },
-      { image: null, caption: 'Prismatic housing after 5-axis milling' },
-      { image: null, caption: 'Batch of bushings, batch size 200 pcs' },
-      { image: null, caption: 'Prototype flange from STEP file, 1 pc' },
+      { image: null, caption: 'Kompleksan strugani deo sa više prečnika' },
+      { image: null, caption: 'Prizmatično kućište nakon 5-osnog glodanja' },
+      { image: null, caption: 'Serija čaura, 200 komada' },
+      { image: null, caption: 'Prototip prirubnice iz STEP fajla, 1 komad' },
     ],
 
     highlights: [
-      'Accepts STEP, IGES, DWG, PDF or physical sample',
-      'Prototype to series in the same workshop',
-      'Material certificates available on request',
-      'Inspection report included for critical parts',
+      'Prihvata STEP, IGES, DWG, PDF ili fizički uzorak',
+      'Od prototipa do serije u istoj radionici',
+      'Sertifikati materijala dostupni na zahtev',
+      'Kontrolni izveštaj uključen za kritične delove',
     ],
   },
 
   {
     slug: 'reverse-engineering',
-    tag: 'Reverse Engineering',
-    name: 'Reverse Engineering',
-    shortDesc: 'Reproduce worn or obsolete parts by measuring existing components.',
+    tag: 'Reverzni inženjering',
+    name: 'Reverzni inženjering',
+    shortDesc: 'Reprodukcija istrošenih ili zastarelih delova merenjem postojećih komponenti.',
     heroImage: null,
 
-    intro: `When original drawings are unavailable and the manufacturer no longer supports a
-    part, Vartig can measure the existing component — or its worn remains — recreate the
-    geometry, select an equivalent material, and produce new parts that match or improve
-    upon the original. This service is especially valuable for older machinery where spare
-    parts are no longer available on the market.`,
+    intro: `Kada originalni crteži nisu dostupni i proizvođač više ne podržava određeni deo,
+    Vartig može izmeriti postojeću komponentu — ili njene istrošene ostatke — rekonstruisati
+    geometriju, odabrati odgovarajući materijal i proizvesti nove delove koji odgovaraju
+    ili poboljšavaju original. Ova usluga je posebno korisna za starije mašine za koje
+    rezervni delovi više nisu dostupni na tržištu.`,
 
     specs: [
-      { label: 'Measurement tools', value: 'CMM, gear measurement centre, 3D scanner' },
-      { label: 'Documentation',     value: 'Full CAD drawing created from measurement' },
-      { label: 'Material matching', value: 'Hardness test + spectrometry analysis' },
-      { label: 'Drawing output',    value: 'DWG / PDF supplied with parts' },
-      { label: 'Part complexity',   value: 'Simple turned parts to complete assemblies' },
-      { label: 'Batch',             value: 'From 1 replacement to stock quantity' },
-      { label: 'Condition input',   value: 'Worn, broken or complete original accepted' },
-      { label: 'Lead time',         value: 'Depends on complexity; typically 1–3 weeks' },
+      { label: 'Merni alati', value: 'CMM, centar za merenje zupčanika, 3D skener' },
+      { label: 'Dokumentacija', value: 'Kompletan CAD crtež izrađen na osnovu merenja' },
+      { label: 'Identifikacija materijala', value: 'Ispitivanje tvrdoće + spektrometrijska analiza' },
+      { label: 'Izlazni crteži', value: 'DWG / PDF isporučeni uz delove' },
+      { label: 'Složenost delova', value: 'Od jednostavnih struganih delova do kompletnih sklopova' },
+      { label: 'Serija', value: 'Od 1 zamenskog dela do lager količina' },
+      { label: 'Ulazno stanje', value: 'Prihvatamo istrošene, polomljene ili kompletne originale' },
+      { label: 'Rok izrade', value: 'Zavisi od složenosti; obično 1–3 nedelje' },
     ],
 
     gallery: [
-      { image: null, caption: 'Worn gear measured on CMM before reproduction' },
-      { image: null, caption: 'CAD drawing created from measurement data' },
-      { image: null, caption: 'New part alongside original for comparison' },
-      { image: null, caption: 'Set of reproduced parts ready for delivery' },
+      { image: null, caption: 'Istrošeni zupčanik meren na CMM-u pre reprodukcije' },
+      { image: null, caption: 'CAD crtež izrađen na osnovu podataka merenja' },
+      { image: null, caption: 'Novi deo pored originala radi poređenja' },
+      { image: null, caption: 'Set reprodukovanih delova spreman za isporuku' },
     ],
 
     highlights: [
-      'No original drawing required',
-      'Material identified by hardness + spectrometry',
-      'CAD drawing delivered with the parts',
-      'Improvement of weak points possible during redesign',
+      'Originalni crtež nije potreban',
+      'Materijal identifikovan tvrdoćom i spektrometrijom',
+      'CAD crtež se isporučuje uz delove',
+      'Moguće unapređenje slabih tačaka tokom redizajna',
     ],
   },
 ]
 
-// Helper: find a service by its URL slug
+// Pomoćna funkcija: pronalazi uslugu prema URL slug-u
 export function getServiceBySlug(slug) {
   return services.find(s => s.slug === slug) || null
 }

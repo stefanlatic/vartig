@@ -99,12 +99,12 @@
               :disabled="sending"
               class="btn-primary w-full text-center"
             >
-              {{ sending ? 'Slanje...' : 'Poruka je poslata!' }}
+              {{ sending ? 'Slanje...' : 'Pošalji poruku!' }}
             </button>
 
             <p class="font-body text-gray-600 text-xs">
               Tehničke crteže možete priložiti i putem e-maila na
-              <a href="mailto:info@vartig.rs" class="text-brand-accent hover:underline">info@vartig.rs</a>
+              <a href="mailto:info@vartig.rs" class="text-brand-accent hover:underline">vartig_nis@yahoo.com</a>
             </p>
           </form>
         </div>
@@ -141,9 +141,7 @@
 
           <!-- Map placeholder -->
           <div class="h-48 bg-surface-700 border border-surface-500 rounded-sm flex flex-col items-center justify-center">
-            <span class="text-3xl mb-2 opacity-40">🗺️</span>
-            <span class="font-condensed text-xs tracking-widest text-gray-600 uppercase">Map Embed Goes Here</span>
-            <span class="font-body text-gray-600 text-xs mt-1">Replace with Google Maps iframe</span>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2081.9926145891986!2d21.872105474641696!3d43.33639187286573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b717f7c4b9cb%3A0x5bff28925c27efd4!2sVartig!5e1!3m2!1ssr!2srs!4v1779465274842!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
@@ -163,34 +161,59 @@ const form = reactive({
   name: '', company: '', email: '', phone: '', message: ''
 })
 
-function submit() {
-  sending.value = true
-  // TODO: Replace with real form submission (e.g. EmailJS, Formspree, your backend)
-  setTimeout(() => {
-    sent.value    = true
+async function submit() {
+  try {
+    sending.value = true
+
+    const response = await fetch('http://localhost:3001/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form),
+    })
+
+    const data = await response.json()
+
+    if (data.success) {
+      sent.value = true
+
+      Object.assign(form, {
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+      })
+    } else {
+      alert('Greška prilikom slanja poruke.')
+    }
+  } catch (err) {
+    console.error(err)
+    alert('Greška na serveru.')
+  } finally {
     sending.value = false
-    Object.assign(form, { name: '', company: '', email: '', phone: '', message: '' })
-  }, 1200)
+  }
 }
 
 const contactInfo = [
   {
     label: 'Adresa',
-    value: 'Industrijska zona bb, Srbija',
+    value: 'Bulevar 12. Februara, Niš 18000',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
     </svg>`,
   },
   {
     label: 'Telefon',
-    value: '+381 xx xxx xxxx',
+    value: '+381 60 4406496',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
     </svg>`,
   },
   {
     label: 'Email',
-    value: 'info@vartig.rs',
+    value: 'vartig_nis@yahoo.com',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
     </svg>`,
