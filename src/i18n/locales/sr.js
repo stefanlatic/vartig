@@ -99,7 +99,7 @@ export default {
       btn:  'Zatražite ponudu',
     },
   },
-
+ 
   machines: {
     header: {
       eyebrow:  'Naša oprema',

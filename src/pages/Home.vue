@@ -136,7 +136,7 @@
       <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <h2 class="font-display text-4xl md:text-5xl text-white mb-4">SPREMNI DA POKRENETE VAŠ PROJEKAT?</h2>
         <p class="font-body text-gray-400 mb-8">
-          Pošaljite nam tehničke crteže ili opišite vaše zahteve — izradiće mo preciznu ponudu.
+          Pošaljite nam tehničke crteže ili opišite vaše zahteve — izradićemo preciznu ponudu.
         </p>
         <RouterLink to="/contact" class="btn-primary">Kontaktirajte Nas Danas</RouterLink>
       </div>

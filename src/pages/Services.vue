@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="What We Offer"
-      title="OUR SERVICES"
-      subtitle="Comprehensive metal manufacturing services — from individual components to complete assemblies, all produced to your exact specifications."
+      eyebrow="Šta nudimo"
+      title="NAŠE USLUGE"
+      subtitle="Sveobuhvatne usluge obrade metala — od pojedinačnih komponenti do kompletnih sklopova, sve izrađeno prema vašim tačnim specifikacijama."
     />
     <div class="stripe-divider"></div>
 

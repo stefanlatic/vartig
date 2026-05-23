@@ -1,8 +1,8 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Our Story"
-      title="ABOUT VARTIG"
+      eyebrow="Naša priča"
+      title="O Nama"
     />
     <div class="stripe-divider"></div>
 

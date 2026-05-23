@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Our Equipment"
-      title="MACHINES PARK"
-      subtitle="A modern workshop equipped with precision machinery and conventional equipment for a wide range of manufacturing operations."
+      eyebrow="Naša oprema"
+      title="MAŠINSKI PARK"
+      subtitle="Moderna radionica opremljena preciznim mašinama i konvencionalnom opremom za širok spektar operacija obrade."
     />
     <div class="stripe-divider"></div>
 
