@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Šta nudimo"
-      title="NAŠE USLUGE"
-      subtitle="Sveobuhvatne usluge obrade metala — od pojedinačnih komponenti do kompletnih sklopova, sve izrađeno prema vašim tačnim specifikacijama."
+      :eyebrow="t('services.header.eyebrow')"
+      :title="t('services.header.title')"
+      :subtitle="t('services.header.subtitle')"
     />
     <div class="stripe-divider"></div>
 
@@ -43,9 +43,9 @@
     <section class="py-20 bg-surface-800">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
-          <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">How It Works</p>
+          <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">{{ t('services.process.eyebrow') }}</p>
           <div class="section-line mx-auto"></div>
-          <h2 class="font-display text-5xl text-white">Naš  Proces</h2>
+          <h2 class="font-display text-5xl text-white">{{ t('services.process.title') }}</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
@@ -71,9 +71,9 @@
 
     <!-- ─── CTA ───────────────────────────────────────────────── -->
     <section class="py-14 bg-brand-dark text-center">
-      <h2 class="font-display text-4xl text-white mb-4">TREBATE PONUDU?</h2>
-      <p class="font-body text-gray-400 mb-8">Pošaljite nam crteže ili opišite zahteve i javićemo vam se brzo.</p>
-      <RouterLink to="/contact" class="btn-primary">Zatražite ponudu</RouterLink>
+      <h2 class="font-display text-4xl text-white mb-4">{{ t('services.cta.heading') }}</h2>
+      <p class="font-body text-gray-400 mb-8">{{ t('services.cta.desc') }}</p>
+      <RouterLink to="/contact" class="btn-primary">{{ t('services.cta.btn') }}</RouterLink>
     </section>
   </div>
 </template>
@@ -82,11 +82,14 @@
 import GearIcon from '@/components/GearIcon.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import { services } from '@/data/services.js'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
 
 const process = [
-  { title: 'Upit',    desc: 'Pošaljite nam crteže, uzorke ili zahteve.' },
-  { title: 'Ponuda',      desc: 'Procenjujemo i pripremamo preciznu ponudu.' },
-  { title: 'Proizvodnja', desc: 'Izrada uz potpunu kontrolu kvaliteta.' },
-  { title: 'Isporuka',   desc: 'Pregledano, upakovano i isporučeno na vreme.' },
+  { title: t('services.process.steps.0.title'), desc: t('services.process.steps.0.desc') },
+  { title: t('services.process.steps.1.title'), desc: t('services.process.steps.1.desc') },
+  { title: t('services.process.steps.2.title'), desc: t('services.process.steps.2.desc') },
+  { title: t('services.process.steps.3.title'), desc: t('services.process.steps.3.desc') },
 ]
 </script>

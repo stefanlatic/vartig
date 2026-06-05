@@ -3,7 +3,7 @@ export default {
     home:         'Home',
     services:     'Our Services',
     machines:     'Machines Park',
-    about:        'About',
+    about:        'About', 
     contact:      'Contact',
   },
 

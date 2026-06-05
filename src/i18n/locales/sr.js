@@ -37,8 +37,8 @@ export default {
     ],
     capabilities: {
       eyebrow: 'Šta izrađujemo',
-      heading: 'NAŠE MOGUĆNOSTI',
-      btn:     'Sve usluge',
+      heading: 'NAŠE USLUGE',
+      btn:     'Pogledajte sve usluge',
     },
     services: [
       { tag: 'Transmisija',     name: 'Zupčanici i lančanici', desc: 'Precizno izrađeni zupčanici i lančanici za zahtevne transmisione primene.' },
@@ -95,6 +95,7 @@ export default {
     addPhoto:      'Dodajte fotografiju',
     noImage:       'Još nema slike',
     cta: {
+      header: 'ZAINTERESOVANI ZA',
       desc: 'Pošaljite nam crteže ili opišite zahteve i pripremićemo ponudu.',
       btn:  'Zatražite ponudu',
     },
