@@ -45,6 +45,13 @@
         <rect x="9" y="0" width="2" height="15" fill="#C8102E"/>
         <rect x="0" y="6.5" width="20" height="2" fill="#C8102E"/>
       </svg>
+
+      <!-- German flag SVG -->
+      <svg v-if="lang.code === 'de'" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <rect width="20" height="5" y="0"  fill="#000000"/>
+        <rect width="20" height="5" y="5"  fill="#DD0000"/>
+        <rect width="20" height="5" y="10" fill="#FFCE00"/>
+      </svg>
     </button>
   </div>
 </template>
@@ -52,11 +59,12 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
+const { locale } = useI18n({ useScope: 'global' })
 
 const langs = [
   { code: 'sr', label: 'Srpski' },
   { code: 'en', label: 'English' },
+  { code: 'de', label: 'Deutsch' },
 ]
 
 function setLang(code) {

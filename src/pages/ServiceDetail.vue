@@ -236,15 +236,22 @@
 import { ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import GearIcon from '@/components/GearIcon.vue'
-import { services, getServiceBySlug } from '@/data/services.js'
+
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
 
 const route = useRoute()
 
-const service = computed(() => getServiceBySlug(route.params.slug))
+const service = computed(() => {
+  const list = tm('serviceData')
+  return list.find(s => s.slug === route.params.slug) ?? null
+})
 
-const otherServices = computed(() =>
-  services.filter(s => s.slug !== route.params.slug).slice(0, 4)
-)
+const otherServices = computed(() => {
+  const list = tm('serviceData')
+  return list.filter(s => s.slug !== route.params.slug).slice(0, 4)
+})
 
 // Lightbox
 const lightboxIndex = ref(null)
@@ -263,9 +270,9 @@ import { onMounted, onUnmounted } from 'vue'
 onMounted(() => window.addEventListener('keydown', onKey))
 onUnmounted(() => window.removeEventListener('keydown', onKey))
 
-// Update page title when service changes
+// Update page title when service or locale changes
 watch(service, (s) => {
-  document.title = s ? `Vartig – ${s.name}` : 'Vartig – Usluge'
+  document.title = s ? `Vartig – ${s.name}` : `Vartig – ${t('nav.services')}`
 }, { immediate: true })
 </script>
 

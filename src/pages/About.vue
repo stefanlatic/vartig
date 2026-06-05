@@ -1,8 +1,8 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Naša priča"
-      title="O Nama"
+      :eyebrow="t('about.header.eyebrow')"
+      :title="t('about.header.title')"
     />
     <div class="stripe-divider"></div>
 
@@ -13,18 +13,18 @@
         <div>
           <div class="section-line"></div>
           <h2 class="font-display text-4xl md:text-5xl text-white mb-6">
-            IZGRAĐEN NA PRECIZNOSTI<br />I ISKUSTVU
+            {{ t('about.story.heading') }}
           </h2>
           <p class="font-body text-gray-400 leading-relaxed mb-4">
-            Vartig je osnovan sa jasnom misijom: da tržištu obezbedi pouzdane, visokoprecizne metalne komponente koje zadovoljavaju i najzahtevnije tehničke zahteve. Tokom godina, izrasli smo iz male mašinske radionice u punopravnog proizvodnog partnera za klijente iz različitih industrija.
+            {{ t('about.story.p1') }}
           </p>
           <p class="font-body text-gray-400 leading-relaxed mb-4">
-           Naš tim iskusnih stručnjaka za obradu metala, inženjera i kontrolora kvaliteta osigurava da svaki deo koji napusti našu radionicu zadovoljava dogovorene specifikacije — svaki put.
+            {{ t('about.story.p2') }}
           </p>
           <p class="font-body text-gray-400 leading-relaxed">
-            Verujemo u dugoročna partnerstva izgrađena na poverenju, transparentnosti i doslednoj isporuci kvaliteta. Ta filozofija je sadržana u našem motu:
+            {{ t('about.story.p3') }}
             <span class="text-brand-accent font-condensed tracking-wider">
-              Kvalitet. Sigurnost. Konkurentnost.
+              {{ t('home.hero.motto') }}
             </span>
           </p>
         </div>
@@ -35,9 +35,9 @@
             <span class="text-6xl opacity-30">👤</span>
           </div>
           <p class="font-body text-gray-400 italic text-center">
-            "U Vartigu smo posvećeni izvrsnosti u svemu što radimo. Naša posvećenost preciznosti i kvalitetu je temelj našeg uspeha."
+            {{ t('about.founder.quote') }}
           </p>
-          <p class="font-condensed text-lg text-center text-white mt-4">— Nenad Popovic, Osnivač i generalni direktor</p>
+          <p class="font-condensed text-lg text-center text-white mt-4">{{ t('about.founder.name') }}</p>
         </div>
 
         <!-- Project photo gallery -->
@@ -88,7 +88,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
           <div class="section-line mx-auto"></div>
-          <h2 class="font-display text-5xl text-white">NAŠE VREDNOSTI</h2>
+          <h2 class="font-display text-5xl text-white">{{ t('about.values.title') }}</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -107,15 +107,19 @@
 
     <!-- ─── CTA ───────────────────────────────────────────────── -->
     <section class="py-16 bg-brand-dark text-center">
-      <h2 class="font-display text-4xl text-white mb-4">HAJDE DA SARAĐUJEMO</h2>
-      <p class="font-body text-gray-400 mb-8">Recite nam o svom projektu i pronaći ćemo najbolje rešenje.</p>
-      <RouterLink to="/contact" class="btn-primary">Kontaktirajte nas</RouterLink>
+      <h2 class="font-display text-4xl text-white mb-4">{{ t('about.cta.heading') }}</h2>
+      <p class="font-body text-gray-400 mb-8">{{ t('about.cta.desc') }}</p>
+      <RouterLink to="/contact" class="btn-primary">{{ t('about.cta.btn') }}</RouterLink>
     </section>
   </div>
 </template>
 
 <script setup>
 import PageHeader from '@/components/PageHeader.vue'
+
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t, tm } = useI18n()
 
 // To add project photos, import them here:
 // import photo1 from '@/assets/projects/project1.jpg'
@@ -125,21 +129,5 @@ import PageHeader from '@/components/PageHeader.vue'
 
 const projectPhotos = [null, null, null]
 
-const values = [
-  {
-    icon: '🎯',
-    title: 'Kvalitet',
-    desc: "Svaki deo se proverava u odnosu na tolerancije crteža pre nego što napusti radionicu. Ne pravimo kompromise u pogledu dimenzionalne tačnosti ili završne obrade površine.",
-  },
-  {
-    icon: '🛡️',
-    title: 'Sigurnost',
-    desc: 'Poštujemo stroge standarde bezbednosti na radu i osiguravamo da naši proizvodi pouzdano i bezbedno funkcionišu u svojoj predviđenoj primeni.',
-  },
-  {
-    icon: '📈',
-    title: 'Konkurentnost',
-    desc: 'Optimizacijom naših procesa i održavanjem moderne opreme, nudimo konkurentne cene bez žrtvovanja kvaliteta ili vremena isporuke.',
-  },
-]
+const values = computed(() => tm('about.values.items'))
 </script>

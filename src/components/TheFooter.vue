@@ -10,14 +10,14 @@
           <span class="font-display text-xl tracking-widest text-white">VARTIG</span>
         </div>
         <p class="text-gray-500 text-sm leading-relaxed font-body">
-          Kvalitet, Sigurnost, Konkurentnost.<br />
-          Precizna izrada metalnih delova prilagođena vašim zahtevima.
+          {{ t('home.hero.motto') }}<br />
+          {{ t('footer.tagline') }}
         </p>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Linkovi</h4>
+        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">{{ t('footer.quickLinks') }}</h4>
         <ul class="space-y-2">
           <li v-for="link in navLinks" :key="link.to">
             <RouterLink
@@ -32,7 +32,7 @@
 
       <!-- Contact -->
       <div>
-        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Kontakt</h4>
+        <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">{{ t('footer.contact') }}</h4>
         <ul class="space-y-3 text-gray-500 text-sm font-body">
           <li class="flex items-start gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-brand-green flex-shrink-0 mt-0.5">
@@ -57,21 +57,24 @@
     </div>
 
     <div class="border-t border-surface-600 py-4 text-center text-gray-600 text-xs font-body">
-      © {{ currentYear }} Vartig d.o.o. — Sva prava su zadrzana.
+      © {{ currentYear }} Vartig d.o.o. — {{ t('footer.rights') }}
     </div>
   </footer>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import GearIcon from '@/components/GearIcon.vue'
 
+const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 
-const navLinks = [
-  { to: '/',               label: 'Početna' },
-  { to: '/services',      label: 'Naše Usluge' },
-  { to: '/machines-park', label: 'Mašinski Park' },
-  { to: '/about',         label: 'O Nama' },
-  { to: '/contact',       label: 'Kontakt' },
-]
+const navLinks = computed(() => [
+  { to: '/',               label: t('nav.home') },
+  { to: '/services',      label: t('nav.services') },
+  { to: '/machines-park', label: t('nav.machines') },
+  { to: '/about',         label: t('nav.about') },
+  { to: '/contact',       label: t('nav.contact') },
+])
 </script>

@@ -22,15 +22,15 @@
             </div>
             <div>
               <h3 class="font-condensed text-xl tracking-wide uppercase text-white mb-3">{{ service.name }}</h3>
-              <p class="font-body text-gray-400 text-sm leading-relaxed mb-4">{{ service.desc }}</p>
+              <p class="font-body text-gray-400 text-sm leading-relaxed mb-4">{{ service.shortDesc }}</p>
               <ul class="space-y-1">
                 <li
-                  v-for="feature in service.features"
-                  :key="feature"
+                  v-for="highlight in service.highlights"
+                  :key="highlight"
                   class="flex items-center gap-2 text-gray-500 text-xs font-body"
                 >
                   <span class="w-1.5 h-1.5 rounded-full bg-brand-green flex-shrink-0"></span>
-                  {{ feature }}
+                  {{ highlight }}
                 </li>
               </ul>
             </div>
@@ -79,17 +79,14 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import GearIcon from '@/components/GearIcon.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import { services } from '@/data/services.js'
-import { useI18n } from 'vue-i18n'
 
 const { t, tm } = useI18n()
 
-const process = [
-  { title: t('services.process.steps.0.title'), desc: t('services.process.steps.0.desc') },
-  { title: t('services.process.steps.1.title'), desc: t('services.process.steps.1.desc') },
-  { title: t('services.process.steps.2.title'), desc: t('services.process.steps.2.desc') },
-  { title: t('services.process.steps.3.title'), desc: t('services.process.steps.3.desc') },
-]
+const services = computed(() => tm('serviceData'))
+
+const process = computed(() => tm('services.process.steps'))
 </script>

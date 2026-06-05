@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Naša oprema"
-      title="MAŠINSKI PARK"
-      subtitle="Moderna radionica opremljena preciznim mašinama i konvencionalnom opremom za širok spektar operacija obrade."
+      :eyebrow="t('machines.header.eyebrow')"
+      :title="t('machines.header.title')"
+      :subtitle="t('machines.header.subtitle')"
     />
     <div class="stripe-divider"></div>
 
@@ -12,7 +12,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
           <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-1">
-             Slike i opisi naših mašina
+            {{ t('machines.gallerySubtitle') }}
           </p>
         </div>
 
@@ -35,10 +35,10 @@
                 class="w-full h-full flex flex-col items-center justify-center"
               >
                 <GearIcon :size="48" class="text-surface-500 mb-2" />
-                <span class="font-condensed text-xs tracking-widest text-gray-600 uppercase">Uskoro stiže fotografija</span>
+                <span class="font-condensed text-xs tracking-widest text-gray-600 uppercase">{{ t('machines.photoSoon') }}</span>
               </div>
               <div class="machine-overlay absolute inset-0 bg-brand-green/10 flex items-center justify-center">
-                <span class="font-condensed text-brand-accent text-xs tracking-widest uppercase">Pogledaj detalje</span>
+                <span class="font-condensed text-brand-accent text-xs tracking-widest uppercase">{{ t('machines.viewDetails') }}</span>
               </div>
             </div>
 
@@ -66,7 +66,7 @@
     <section class="py-16 bg-surface-800">
       <div class="max-w-7xl mx-auto px-6">
         <div class="section-line"></div>
-        <h2 class="font-display text-4xl text-white mb-10">TEHNIČKE MOGUĆNOSTI</h2>
+        <h2 class="font-display text-4xl text-white mb-10">{{ t('machines.capabilities.title') }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div
             v-for="cap in capabilities"
@@ -99,6 +99,11 @@ import dubilicaVeca from '@/assets/machines/dubilica-veca.jpeg'
 import potisjePA831P from '@/assets/machines/potisje-PA831P.jpeg'
 import strugF from '@/assets/machines/strug-frenky.jpeg'
 // do zoom on click to machine
+
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
 
 const machines = [
   {
@@ -175,10 +180,5 @@ const machines = [
   },
 ]
 
-const capabilities = [
-  { value: '±0.02', label: 'Uobicajena tolerancija (mm)' },
-  { value: '16.000mm',    label: 'Maksimalna dužina vratila' },
-  { value: '2.500mm', label: 'Maksimalni prečnik zupčanika'},
-  { value: 'Ra 0.4', label: 'Površinska završna obrada' },
-]
+const capabilities = computed(() => tm('machines.capabilities.items'))
 </script>

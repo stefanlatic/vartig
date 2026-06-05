@@ -1,9 +1,9 @@
 <template>
   <div class="pt-16">
     <PageHeader
-      eyebrow="Stupite u kontakt"
-      title="KONTAKT"
-      subtitle="Pošaljite nam tehničke zahteve ili zatražite ponudu. Odgovorićemo vam brzo."
+      :eyebrow="t('contact.header.eyebrow')"
+      :title="t('contact.header.title')"
+      :subtitle="t('contact.header.subtitle')"
     />
     <div class="stripe-divider"></div>
 
@@ -13,7 +13,7 @@
         <!-- ─── FORM ─────────────────────────────────────────── -->
         <div>
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-8">POŠALJITE NAM PORUKU</h2>
+          <h2 class="font-display text-4xl text-white mb-8">{{ t('contact.form.title') }}</h2>
 
           <!-- Success state -->
           <div
@@ -21,11 +21,11 @@
             class="bg-brand-dark border border-brand-green p-8 rounded-sm text-center"
           >
             <div class="text-4xl mb-3">✅</div>
-            <h3 class="font-condensed text-xl tracking-wide text-white uppercase mb-2">Poruka poslata!</h3>
+            <h3 class="font-condensed text-xl tracking-wide text-white uppercase mb-2">{{ t('contact.form.successTitle') }}</h3>
             <p class="font-body text-gray-400 text-sm">
-              Hvala što ste nas kontaktirali. Javićemo vam se što pre.
+              {{ t('contact.form.successDesc') }}
             </p>
-            <button @click="sent = false" class="btn-outline mt-6 text-sm">Pošaljite još jednu poruku</button>
+            <button @click="sent = false" class="btn-outline mt-6 text-sm">{{ t('contact.form.sendAnother') }}</button>
           </div>
 
           <!-- Form -->
@@ -33,63 +33,63 @@
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                  Ime i prezime *
+                  {{ t('contact.form.name') }} *
                 </label>
                 <input
                   v-model="form.name"
                   type="text"
                   class="form-input"
-                  placeholder="Vaše ime"
+                  :placeholder="t('contact.form.namePh')"
                   required
                 />
               </div>
               <div>
                 <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                  Kompanija
+                  {{ t('contact.form.company') }}
                 </label>
                 <input
                   v-model="form.company"
                   type="text"
                   class="form-input"
-                  placeholder="Naziv kompanije"
+                  :placeholder="t('contact.form.companyPh')"
                 />
               </div>
             </div>
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                E-mail adresa *
+                {{ t('contact.form.email') }} *
               </label>
               <input
                 v-model="form.email"
                 type="email"
                 class="form-input"
-                placeholder="vaš@email.com"
+                :placeholder="t('contact.form.emailPh')"
                 required
               />
             </div>
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-               Broj telefona
+                {{ t('contact.form.phone') }}
               </label>
               <input
                 v-model="form.phone"
                 type="tel"
                 class="form-input"
-                placeholder="+381 ..."
+                :placeholder="t('contact.form.phonePh')"
               />
             </div>
 
             <div>
               <label class="font-condensed text-xs tracking-widest uppercase text-gray-500 block mb-1.5">
-                Vaša poruka / Zahtev *
+                {{ t('contact.form.message') }} *
               </label>
               <textarea
                 v-model="form.message"
                 rows="5"
                 class="form-input resize-none"
-                placeholder="Opišite projekat, tražene delove, količine, tolerancije..."
+                :placeholder="t('contact.form.messagePh')"
                 required
               ></textarea>
             </div>
@@ -99,12 +99,12 @@
               :disabled="sending"
               class="btn-primary w-full text-center"
             >
-              {{ sending ? 'Slanje...' : 'Pošalji poruku!' }}
+              {{ sending ? t('contact.form.sending') : t('contact.form.send') }}
             </button>
 
             <p class="font-body text-gray-600 text-xs">
-              Tehničke crteže možete priložiti i putem e-maila na
-              <a href="mailto:info@vartig.rs" class="text-brand-accent hover:underline">vartig_nis@yahoo.com</a>
+              {{ t('contact.form.emailNote') }}
+              <a href="mailto:vartig_nis@yahoo.com" class="text-brand-accent hover:underline">vartig_nis@yahoo.com</a>
             </p>
           </form>
         </div>
@@ -112,7 +112,7 @@
         <!-- ─── INFO ─────────────────────────────────────────── -->
         <div>
           <div class="section-line"></div>
-          <h2 class="font-display text-4xl text-white mb-8">KONTAKT INFORMACIJE</h2>
+          <h2 class="font-display text-4xl text-white mb-8">{{ t('contact.info.title') }}</h2>
 
           <div class="space-y-6 mb-10">
             <div v-for="info in contactInfo" :key="info.label" class="flex items-start gap-4">
@@ -126,7 +126,7 @@
 
           <!-- Working hours -->
           <div class="bg-surface-700 border border-surface-500 p-6 rounded-sm mb-6">
-            <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">Radno Vreme</h4>
+            <h4 class="font-condensed text-sm tracking-widest uppercase text-brand-accent mb-4">{{ t('contact.hours.title') }}</h4>
             <div class="space-y-2">
               <div
                 v-for="wh in workingHours"
@@ -151,8 +151,11 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import PageHeader from '@/components/PageHeader.vue'
+
+import { useI18n } from 'vue-i18n'
+const { t, tm } = useI18n()
 
 const sent    = ref(false)
 const sending = ref(false)
@@ -196,33 +199,29 @@ async function submit() {
   }
 }
 
-const contactInfo = [
+const contactInfo = computed(() => [
   {
-    label: 'Adresa',
+    label: t('contact.info.address'),
     value: 'Bulevar 12. Februara, Niš 18000',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
     </svg>`,
   },
   {
-    label: 'Telefon',
+    label: t('contact.info.phone'),
     value: '+381 60 4406496',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
     </svg>`,
   },
   {
-    label: 'Email',
+    label: t('contact.info.email'),
     value: 'vartig_nis@yahoo.com',
     svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
     </svg>`,
   },
-]
+])
 
-const workingHours = [
-  { day: 'Ponedeljak – Petak', hours: '07:00 – 15:00' },
-  { day: 'Subota',        hours: '07:00 – 13:00' },
-  { day: 'Nedelja',          hours: 'Ne radimo' },
-]
+const workingHours = computed(() => tm('contact.hours.rows'))
 </script>

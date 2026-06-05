@@ -27,21 +27,26 @@
         >
           {{ link.label }}
         </RouterLink>
+        <div class="w-px h-5 bg-surface-500"></div>
+        <LangSwitcher />
       </div>
 
-      <!-- Mobile toggle -->
-      <button
-        @click="mobileOpen = !mobileOpen"
-        class="md:hidden text-gray-400 hover:text-white p-2"
-        aria-label="Toggle menu"
-      >
+      <!-- Mobile: lang switcher + hamburger -->
+      <div class="md:hidden flex items-center gap-3">
+        <LangSwitcher />
+        <button
+          @click="mobileOpen = !mobileOpen"
+          class="text-gray-400 hover:text-white p-2"
+          aria-label="Toggle menu"
+        >
         <svg v-if="!mobileOpen" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         <svg v-else width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M6 18L18 6M6 6l12 12" />
         </svg>
-      </button>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
@@ -66,19 +71,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import GearIcon from '@/components/GearIcon.vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import LangSwitcher from '@/components/LangSwitcher.vue'
 
+const { t } = useI18n()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
-const navLinks = [
-  { to: '/',              label: 'Početna' },
-  { to: '/services',     label: 'Naše Usluge' },
-  { to: '/machines-park', label: 'Mašinski Park' },
-  { to: '/about',        label: 'O Nama' },
-  { to: '/contact',      label: 'Kontakt' },
-]
+const navLinks = computed(() => [
+  { to: '/',               label: t('nav.home') },
+  { to: '/services',      label: t('nav.services') },
+  { to: '/machines-park', label: t('nav.machines') },
+  { to: '/about',         label: t('nav.about') },
+  { to: '/contact',       label: t('nav.contact') },
+])
 
 function onScroll() {
   scrolled.value = window.scrollY > 40

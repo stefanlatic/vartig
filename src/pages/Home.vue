@@ -2,7 +2,7 @@
   <div>
     <!-- ─── HERO ─────────────────────────────────────────────── -->
     <section
-      class="relative min-h-screen flex items-center justify-center overflow-hidden hero-diagonal bg-surface-900 gear-bg noise"
+      class="relative min-h-screen flex items-center justify-center overflow-x-hidden hero-diagonal bg-surface-900 gear-bg noise"
     >
       <!-- Decorative spinning gears -->
       <div class="absolute top-28 right-16 text-brand-dark/30 gear-spin hidden lg:block pointer-events-none">
@@ -15,10 +15,8 @@
       <!-- Left accent line -->
       <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-brand-green to-transparent"></div>
 
-      <LangSwitcher />
-
-      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <p class="font-condensed text-brand-accent tracking-[0.4em] uppercase text-sm mb-6 mt-16">
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16 md:pt-0 md:pb-0">
+        <p class="font-condensed text-brand-accent tracking-[0.4em] uppercase text-sm mb-6 md:mt-16">
           {{ t('home.hero.tagline') }}
         </p> 
         <h1 class="font-display text-7xl md:text-9xl text-white leading-none mb-4 tracking-wider">
@@ -44,7 +42,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">Ko smo mi</p>
+            <p class="font-condensed text-brand-accent tracking-[0.3em] uppercase text-xs mb-3">{{ t('home.who.eyebrow') }}</p>
             <div class="section-line"></div>
             <h2 class="font-display text-5xl md:text-6xl text-white leading-tight mb-6 md:w-[40%] sm:w-[60%]">
               {{ t('home.who.heading') }}
@@ -157,42 +155,18 @@ import imgReducers      from '@/assets/services/reducers.png'
 import imgAssemblies    from '@/assets/services/assemblies.jpg'
 import imgConstructions from '@/assets/services/constructions.jpg'
 import imgCustom        from '@/assets/services/custom-machining.jpg'
-import LangSwitcher from '../components/LangSwitcher.vue'
 import { computed } from 'vue'
-const stats = tm('home.stats');
+const stats = computed(() => tm('home.stats'))
 
-const translatedServices = computed(() => tm('home.services'))
-
-const servicesPreview = [
-  {
-    slug:  'gears-sprockets',
-    image: imgGears,
-    ...translatedServices.value[0]
-  },
-  {
-    slug:  'shafts-axles',
-    image: imgShafts,
-    ...translatedServices.value[1]
-  },
-  {
-    slug:  'reducers',
-    image: imgReducers,
-    ...translatedServices.value[2]
-  },
-  {
-    slug:  'assemblies',
-    image: imgAssemblies,
-    ...translatedServices.value[3]
-  },
-  {
-    slug:  'constructions',
-    image: imgConstructions,
-    ...translatedServices.value[4]
-  },
-  {
-    slug:  'custom-machining',
-    image: imgCustom,
-    ...translatedServices.value[5]
-  },
-]
+const servicesPreview = computed(() => {
+  const services = tm('home.services')
+  return [
+    { slug: 'gears-sprockets',  image: imgGears,         ...services[0] },
+    { slug: 'shafts-axles',     image: imgShafts,        ...services[1] },
+    { slug: 'reducers',         image: imgReducers,      ...services[2] },
+    { slug: 'assemblies',       image: imgAssemblies,    ...services[3] },
+    { slug: 'constructions',    image: imgConstructions, ...services[4] },
+    { slug: 'custom-machining', image: imgCustom,        ...services[5] },
+  ]
+})
 </script>
